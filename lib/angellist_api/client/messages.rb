@@ -38,7 +38,7 @@ module AngellistApi
       #   for messages that were sent to the authenticated user. Messages are paginated
       #   and ordered by message timestamp descending. Requires scope "message".
       def get_thread(options={})
-        get("1/messages/" + options[:thread_id], options)
+        get("1/messages/" + options[:thread_id].to_s, options)
       end
       
       # Creates a new message from the authenticated user to the other participant of the 
