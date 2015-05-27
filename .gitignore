@@ -10,4 +10,6 @@ doc/
 .yardoc/
 Gemfile.local
 tmp
+.idea/*
+
 
