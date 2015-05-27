@@ -27,6 +27,19 @@ module AngellistApi
       def get_messages(options={})
         get("1/messages", options)
       end
+
+      # Returns a  single that the authenticated user is involved in.
+      #
+      # @requires_authentication Yes
+      #
+      # @param options [Hash] A customizable set of options.
+      # @option options [Integer] :thread_id Returns the messages for the given thread
+      #   that the authenticated user is involved in. The viewed attribute will be present
+      #   for messages that were sent to the authenticated user. Messages are paginated
+      #   and ordered by message timestamp descending. Requires scope "message".
+      def get_thread(options={})
+        get("1/messages/" + options[:thread_id], options)
+      end
       
       # Creates a new message from the authenticated user to the other participant of the 
       # given thread. Returns the new message on success. Requires scope "message".
